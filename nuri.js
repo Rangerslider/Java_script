@@ -1,4 +1,4 @@
-/*var nuri,ex,ex1,ex2,ex3,ex4,ex5;
+var nuri,ex,ex1,ex2,ex3,ex4,ex5;
 nuri=10;
 function print(demo){
     console.log(demo);
@@ -13,7 +13,7 @@ ex1={
     call:88
 }
 print(ex)
-print(ex1) */
+print(ex1) 
 
 
 
