@@ -1,4 +1,4 @@
-let num = 20; 
+/*let num = 20; 
 num= toString(num); //num ke string e convert korer jonne
 console.log (typeof(num));
  
@@ -42,4 +42,127 @@ console.log(yy);  // 88
 let nuri;
 nuri=0o11;
 console.log(nuri)
+*/
+
+
+
+
+
+
+
+                ///Implicit Conversion to String
+let result;
+
+result = '3' + 2; 
+console.log(result) // "32"
+
+result = '3' + true; 
+console.log(result); // "3true"
+
+             ///Implicit Conversion to Number
+result = '4' - '2'; 
+console.log(result); // 2 // string formet in 2
+
+result = '4' - 2;
+console.log(result); // 2//without string formet in 2
+
+result = '4' * 2;
+console.log(result); // 8
+
+result = '4' / 2;
+console.log(result); // 2
+
+             ///Non-numeric String Results to NaN
+result = 'hello' - 'world';
+console.log(result); // NaN
+
+result = '4' - 'hello';
+console.log(result); // NaN
+
+            //Boolean Conversion to Number
+ result = '4' - true;
+console.log(result); // 3
+
+result = 4 + true;
+console.log(result); // 5
+
+result = 4 + false;
+console.log(result); // 4
+
+            // null Conversion to Number
+// null is 0 when used with number
+result = 4 + null;
+console.log(result);  // 4
+
+result = 4 - null;
+console.log(result);  // 4
+
+               //undefined used with number, boolean or null
+// Arithmetic operation of undefined with number, boolean or null gives NaN
+result = 4 + undefined;
+console.log(result);  // NaN
+
+result = true + undefined;
+console.log(result);  // NaN
+
+result = null + undefined;
+console.log(result);  // NaN
+
+                 //Convert to Number Explicitly
+// string to number
+result = Number('324');
+console.log(result); // 324
+
+result = Number('324e-1')  
+console.log(result); // 32.4
+
+// boolean to number
+result = Number(true);
+console.log(result); // 1
+
+result = Number(false);
+console.log(result); // 0
+
+                  ///Convert to Number Explicitly
+result = parseInt('20.01');
+console.log(result); // 20
+
+result = parseFloat('20.01');
+console.log(result); // 20.01
+
+result = +'20.01';
+console.log(result); // 20.01
+
+result = Math.floor('20.01');
+console.log(result); // 20
+
+//number to string
+result = String(324);
+console.log(result);  // "324"
+
+result = String(2 + 4);
+console.log(result); // "6"
+
+                   //other data types to string
+result = String(null);
+console.log(result); // "null"
+
+result = String(undefined);
+console.log(result); // "undefined"
+
+result = String(NaN);
+console.log(result); // "NaN"
+
+result = String(true);
+console.log(result); // "true"
+
+result = String(false);
+console.log(result); // "false"
+
+                        // using toString()
+result = (324).toString();
+console.log(result); // "324"
+
+result = true.toString();
+console.log(result); // "true"
 
