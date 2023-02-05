@@ -135,8 +135,8 @@ class Person {
 }
 
 let person1 = new Person('nuri');
-console.log(person1.name); // Jack
+console.log(person1.name);
 
 // changing the value of name property
 person1.personName = 'joy';
-console.log(person1.name); // Sarah
+console.log(person1.name);
