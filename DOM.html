@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<!--https://www.w3schools.com/js/js_validation.asp-->
+
+<body>
+
+    <h2>HTML DOM </h2>
+    <p id="intro">HTML get Elements by Id</p>
+    <p>This example demonstrates the getElementsById method.</p>
+    <b>
+        <p id="demo"></p>
+    </b>
+    <script>
+        //just set print hello joy using id = demo 
+        // document.getElementById("demo").innerHTML = "hello joy"; 
+
+        // find id and store element and then print it by the help of innerhtml 
+        let element = document.getElementById("intro");
+        document.getElementById("demo").innerHTML = "The text from getElementByIntro paragraph is: " + element.innerHTML;
+
+    </script>
+    <br>
+    <br>
+
+    <h2>JavaScript HTML DOM</h2>
+
+    <div id="main">
+        <p>Finding HTML Elements by Tag Name</p>
+        <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+    </div>
+
+    <p id="demo1"></p>
+
+    <script>
+
+        const x = document.getElementById("main");
+        const y = x.getElementsByTagName("p");
+
+        document.getElementById("demo1").innerHTML = 'The first paragraph (index 0) inside "main" is: ' + y[1].innerHTML;
+
+    </script>
+
+    <br>
+    <br>
+
+    <h1 id="id01">Old Heading</h1>
+    <script>
+        document.getElementById("id01").innerHTML = "New Heading"; // replace the exitsting one 
+    </script>
+
+    <p>JavaScript changed "Old Heading" to "New Heading".</p>
+
+
+    <br>
+    <br>
+
+    <h2>JavaScript Validation</h2>
+
+    <p>Please input a number between 1 and 10:</p>
+
+    <input id="numb">
+
+    <button type="button" onclick="myFunction()">Submit</button>
+
+    <p id="demo3"></p>
+
+    <script>
+        function myFunction() {
+            // Get the value of the input field with id="numb"
+            let x = document.getElementById("numb").value;
+            // If x is Not a Number or less than one or greater than 10
+            let text;
+            if (isNaN(x) || x < 1 || x > 10) {
+                text = "Input not valid";
+            } else {
+                text = "Input OK";
+            }
+            document.getElementById("demo3").innerHTML = text;
+        }
+
+    </script>
+
+
+    <h1 onclick="changeText(this)">Click on this text!</h1>
+
+    <script>
+        function changeText(id) {
+            id.innerHTML = "Ooops!";
+        }
+    </script>
+
+
+    <br>
+    <br>
+
+    <h2>JavaScript addEventListener()</h2>
+
+    <p>This example uses the addEventListener() method to add many events on the same button.</p>
+
+    <button id="myBtn">Try it</button>
+
+    <p id="demo6"></p>
+
+    <script>
+        var xx = document.getElementById("myBtn");
+        
+        xx.addEventListener("mouseover", myFunction);
+        xx.addEventListener("click", mySecondFunction);
+        xx.addEventListener("mouseout", myThirdFunction);
+
+        function myFunction() {
+            document.getElementById("demo6").innerHTML += "Moused over!<br>";
+        }
+
+        function mySecondFunction() {
+            document.getElementById("demo6").innerHTML += "Clicked!<br>";
+        }
+
+        function myThirdFunction() {
+            document.getElementById("demo6").innerHTML += "Moused out!<br>";
+        }
+    </script>
+
+</body>
+
+</html>
