@@ -1,4 +1,4 @@
-//  1 . issa moto number pass korty parbo ... er jonno
+ 1 . issa moto number pass korty parbo ... er jonno
 
 function sum(...joy){
     let total=0;
@@ -11,14 +11,14 @@ console.log(sum(1,4))
 console.log(sum(1,2,4))
 
 
-// 2. const er majhe value change kora jai .
+2. const er majhe value change kora jai .
 
 const joy={ name: " joy ", id:62 }
 joy.id=00;
 console.log(joy) // joy 00
 
 
-// 3. copy related 
+3. copy related 
 
 const joy ={ name: " joy ", id:62 }
 const roy=joy;
@@ -34,9 +34,7 @@ console.log(joy) // it will not change joy.id
 
 
 
-
-
-//1.for loop 
+1.for loop 
 const numbers=[25,55,62,22];
 for(let i =0;i<numbers.length; i++){
     console.log(numbers[i]*2);         //50,110,124,44
@@ -44,7 +42,7 @@ for(let i =0;i<numbers.length; i++){
 
 
 
-//2.while loop 
+2.while loop 
 let i=0;
 while(i<numbers.length){
     console.log(numbers[i]*2);
@@ -52,7 +50,7 @@ while(i<numbers.length){
 }
 
 
-//3.do-while loop
+3.do-while loop
 do {
     console.log(numbers[i]*2);
     i++;
@@ -61,14 +59,14 @@ while(i<numbers.length);
 
 
 
-//4.for-of -loop
+4.for-of -loop
 for(const num of numbers){
     console.log(num*2);
 }
 
 
 
-//5.for-in -loop
+5.for-in -loop
 const nuri={
     1: 44,
     2:62,
@@ -80,25 +78,20 @@ for(const num  in numbers){
 }
 
 
-
-//6.map loop 
+6.map loop 
 const doubleofNumbers = numbers.map(num=>{
     return num*2;
 })
 
 
 
-//7.for-each loop 
+7.for-each loop 
 numbers.forEach(num=>{
     console.log(num*2);
 })
 
 
-
-
-
-
-///8.short process of for loop 
+8.short process of for loop 
 const fruits  = ['mango', 'banana', 'berry'];
 for (let i= 0; i<fruits.length ;i++){
     const fruit = fruits[i];
@@ -110,7 +103,7 @@ for (let fruit of fruits) console.log(fruit);
 
 
 
-//9.Turnary oparetor 
+9.Turnary oparetor 
 let x=true;
 if(x= true){
   console.log("its true");
@@ -122,7 +115,7 @@ else{ console.log("false");
 
 
 
- //10.
+ 10.
  const Obj = {
   data:{
       
@@ -140,7 +133,7 @@ const {name,id,class} = Obj.data;
 
 
 
-//11.assigning value in a short way 
+11. assigning value in a short way 
 
 let x;
 if (data.name){
@@ -149,3 +142,72 @@ else x=6666;
 
 eitar equivalent holo 
 let x=data.name || 6666
+
+
+12. filter unique values
+const array = [1,1,2,3,6,6,3,1]
+const UniqueArray = [...new Set(array)];
+--result :[1,2,3,6]
+
+
+13.Convert to boolean 
+const isTrue =!0; //short unique technique
+const alsoFalse =!!0;
+
+
+//14. Convert to string
+const val = 5 + "";
+result: 5 and typeof val : string
+
+
+15. Convert to int
+let int ="15";
+int = +int;
+result:15 typeof int: number
+
+
+16. Convert float to int
+const int = 19.8 | 0;
+result: 19 typeof int : number
+
+
+17. remove last digits
+const int = 1553/10 |0 ;;
+result : 155 typeof int : number
+
+
+18. truncate an array
+let array = [0,1,2,3,4,5];
+array.length = 3;
+result :[0,1,2]
+
+
+19.last item in array
+let array = [0,1,2,3];
+array.Slice(-1);
+result:[3]
+
+
+20.assigning and accing at the same time 
+
+const joy = {} 
+joy.name="joyAdhikary" / joy["name"] = "joyAdhikary"    // creating and assign property at the same time 
+console.log(joy)  // {name : joyAdhikary } 
+
+
+
+
+21.map vs foreach 
+
+so basically  akta methes ashe je foreach modify kore r map array ke modify kore nah . but this steatment is not true .
+lets see an example : 
+
+let arr1=[1, 2, 3, 4 ]
+let result1=arr1.foreach( (x,i,a)=>( a[i]=x*2 ))
+console.log( "array 1 is ", result1) // undefined 
+
+let result2=arr1.map( (x,i,a)=>( a[i]=x*2 ))
+console.log( "array 1 is ", result1)  // 2 4 6 8 
+
+
+
