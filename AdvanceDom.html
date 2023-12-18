@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>DOM Manipulation</title>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        #green {
+            color: green;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .red {
+            color: red;
+            font-size: 22px;
+            font-weight: 550;
+        }
+
+        .blue {
+            color: blue;
+            font-size: 22px;
+            font-weight: 550;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .middle {
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+                                                            <!-- Tips  -->
+
+<!-- 1. innerHTML , innerContent  2 ta same nah . innerHTML a kono kisu invisible set kora thakle dekhabne nah . kintu innerContent a sob dekhai . content a jah jah ashe sob 
+
+2. document.queryseletor always 1st ta select kore 
+
+3.Jkn Attribute add korbo js diye tkn jeita set korbo oitai bose jabe as it is. Mane doro amr class set kora ashe X akn ami js diye class set korlam Y tahole X replace hoye Y bose jabe. kintu ami jodi 2 tai cai tahole X Y dite hobe.
+
+4.child thke parent access kora jai abr parent theke o child access kora jai. 
+
+-->
+
+<body style="padding:2rem; background-color: rgba(122, 224, 238, 0.797); font-size: large;overflow-x: hidden;">
+
+
+    <!--! Select Attribute ( ID, CLASS ) -->
+
+    <div class="a">
+        <h1 class="middle">Select Attribute ( ID, CLASS )</h1>
+
+        <div id="aa" class="fuck">sub Div Content of class a</div>
+        <div class="aa"></div>
+        <div class="aaa"></div>
+
+    </div>
+
+
+    <!--! Select HTML Tag -->
+
+    <div class="b">
+        <h1 class="middle">Select HTML Tag</h1>
+        <p>1st p tag</p>
+        <p>2nd P tag</p>
+        <span>
+            this is span content
+        </span>
+        <span style="margin-left: 10px;">
+            this is 2nd span content
+        </span>
+        <h1>2nd h1 tag</h1>
+    </div>
+
+
+    <!--! Add Dynamic Attribute -->
+
+
+    <div class="c">
+        <h1 class="middle">Add Dynamic Attribute</h1>
+        <!-- adding CLASS -->
+        <h2>This content is initially visible</h2>
+        <!-- adding ID-->
+        <p>This content color is initially black</p>
+    </div>
+
+
+    <!--! Add Dynamic Tag -->
+
+    <div class="d">
+        <h1 class="middle">Add Dynamic Tag</h1>
+        <h1 style="color: red">This is the only tag</h1>
+    </div>
+
+
+    <!--! Add Dynamic Style -->
+
+    <div class="e">
+        <h1 class="middle">Add Dynamic Style</h1>
+        <h2 onclick="cngColor()">This content color is black, click this text change the color</h2>
+    </div>
+
+
+    <!--! Add Dynamic Content -->
+
+    <div class="f">
+        <h1 class="middle">Add Dynamic Content</h1>
+        <p>This is 1st p tag.</p>
+        <p>This is 3rd p tag</p>
+        <h4>2nd and 4th will be added Dynamically</h4>
+    </div>
+
+
+    <!--! Remove Attribute And Tag -->
+
+    <div class="g">
+        <h1 class="middle">Remove Dynamic Attribute & Tag</h1>
+        <!-- removing CLASS -->
+        <h2 class="hidden">This content is initially invisible</h2>
+        <p id="green">This content color was initially green</p>
+
+        <!-- removing TAG -->
+        <h3 onclick="removeTag()">Click to remove this content</h3>
+    </div>
+
+
+    <!--! Replace Attribute -->
+
+    <div class="h">
+        <h1 class="middle">Replace Attribute</h1>
+        <h2 class="red" onclick="ReplaceAttribute()">This content color was red, hover to change </h2>
+    </div>
+
+    <!--! Add Event -->
+
+    <div class="j">
+        <!-- click event -->
+        <h1 class="middle">Add Event</h1>
+
+        <h2 onclick="changeText(this)">Click on this text!</h2>
+
+        <h2 class="cng">This content is initially visible click to invisible</h2>
+
+    </div>
+
+    <script src="Dom.js"></script>
+</body>
+
+</html>
