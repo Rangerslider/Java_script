@@ -1,0 +1,60 @@
+    <!-- getElementById()	Returns the element that has the ID attribute with the specified value
+    getElementsByClassName()	Returns an HTMLCollection containing all elements with the specified class name
+    getElementsByName()	        Returns an live NodeList containing all elements with the specified name
+    getElementsByTagName()	    Returns an HTMLCollection containing all elements with the specified tag name
+    querySelector()	            Returns the first element that matches a specified CSS selector(s) in the document
+    querySelectorAll()	        Returns a static NodeList containing all elements that matches a specified CSS selector(s) in the document     -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>DOM JavaScript</title>
+</head>
+
+<body>
+    <div id="text" class="main">
+        Ishmoth ura Nuri
+    </div>
+    <p id="demo"></p>
+    <ul id="item"></ul>
+    <script>
+        document.getElementById("text").innerHTML =
+            "<section><p> Dom <a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction' target='_blank'>Manipulating documents</a></p></section>"; //ekhane div id te nuri  set kore dom die new value assign korsi
+
+        document.getElementById("text").style.color = "red"; //css style add 
+
+        console.log("innerWidth: " + window.innerWidth);
+        console.log("innerHeight: " + window.innerHeight);
+        console.log("outerWidth: " + window.outerWidth);
+        console.log("outerHeight: " + window.outerHeight);
+        console.log("title: " + window.document.title); // The document title
+        console.log("body: " + window.document.body); // The body element
+        console.log("URL: " + window.document.URL); // Window URL
+        console.log("all: " + window.document.all); // all
+        console.log("documentElement: " + document.documentElement); // documentElement
+
+        //Select Attribute ( ID, CLASS )
+        const x = document.querySelector('.aa')
+        console.log(x)
+
+        // querySelector()
+        document.querySelector('.main').style.color = 'green';
+        document.querySelector('.main').style.backgroundColor = 'blue';
+        document.querySelector('.main').style.cssText = 'color: white; background-color: red;';
+
+        // getAttribute()
+        console.log('getAttribute(): ' + document.getElementById('text').getAttribute('class'));
+
+        // setAttribute()
+        document.querySelector('.main').setAttribute('style', 'background-color: red;');
+
+        // addEventListener()
+        document.addEventListener('click', function () {
+        document.getElementById('text').innerHTML = 'Dom click sucessfully!';
+        });
+    </script>
+</body>
+
+</html>
