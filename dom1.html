@@ -1,4 +1,4 @@
-    <!-- getElementById()	Returns the element that has the ID attribute with the specified value
+<!-- getElementById()	Returns the element that has the ID attribute with the specified value
     getElementsByClassName()	Returns an HTMLCollection containing all elements with the specified class name
     getElementsByName()	        Returns an live NodeList containing all elements with the specified name
     getElementsByTagName()	    Returns an HTMLCollection containing all elements with the specified tag name
@@ -14,11 +14,14 @@
 </head>
 
 <body>
-    <div id="text" class="main">
-        Ishmoth ura Nuri
-    </div>
+    <div id="text" class="main"> Ishmoth ura Nuri </div>
     <p id="demo"></p>
     <ul id="item"></ul>
+
+    <div class="xyz">aaaaaa</div>
+    <h1 id=" header"> nuri</h1>
+    <h2> mnu</h2>
+    <button> click me </button>
     <script>
         document.getElementById("text").innerHTML =
             "<section><p> Dom <a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction' target='_blank'>Manipulating documents</a></p></section>"; //ekhane div id te nuri  set kore dom die new value assign korsi
@@ -52,8 +55,26 @@
 
         // addEventListener()
         document.addEventListener('click', function () {
-        document.getElementById('text').innerHTML = 'Dom click sucessfully!';
+            document.getElementById('text').innerHTML = 'Dom click sucessfully!';
         });
+    </script>
+
+    <!-- 2nd day -->
+    <script>
+        // document.getElementById("myId")//selecting with Id
+        // document.getElementsByClassName("myClass")//selecting with class
+        // document.getElementsByTagName("p")//selecting with tag
+
+        let heading = document.getElementById("header")
+        console.log(heading);
+        let normal= document.getElementById("xyz")
+        console.log(normal);
+
+        let h2= document.querySelector("h2");
+        console.log(h2.innerText);
+        h2.innerText = h2.innerText + "pagol"
+
+
     </script>
 </body>
 
