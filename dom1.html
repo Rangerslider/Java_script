@@ -5,6 +5,34 @@
     querySelector()	            Returns the first element that matches a specified CSS selector(s) in the document
     querySelectorAll()	        Returns a static NodeList containing all elements that matches a specified CSS selector(s) in the document     -->
 
+<!-- Daftar Event DOM by JS -->
+
+<!-- - Mouse Event
+- Keyboard Event
+- Resources Event
+- Focus Event
+- View Event
+- Form Event
+- CSS Animation & Transition Event
+- Drag & Event
+
+Mouse Event :
+- click
+- dblclick
+- mouseover
+- mouseenter
+- mouseleave
+- mouseup -->
+
+// Special method for class attribute:
+<!-- element.classList
+    
+     - element.classList.add('classname') : adds class
+     - element.classList.remove('classname') : removes class
+     - element.classList.toggle('classname') : add class jodi add na thake age theke and delete jodi add thake
+     - element.classList.item(i) : checks the class of the nth item (based on index) -> usually run in the browser console, returns the class name.
+     - element.classList.contains('classname') : checks certain classes in an element -> usually run in the browser console, returns boolean.
+     - element.classList.replace('name of the class you want to replace', 'name of the new class'): replaces an existing class with a new class. -->
 
 <!DOCTYPE html>
 <html>
@@ -14,19 +42,30 @@
 </head>
 
 <body>
-    <div id="text" class="main"> Ishmoth ura Nuri </div>
+    <div id="text" class="main">Ishmoth ura Nuri</div>
     <p id="demo"></p>
     <ul id="item"></ul>
 
     <div class="xyz">aaaaaa</div>
-    <h1 id=" header"> nuri</h1>
-    <h2> mnu</h2>
-    <button> click me </button>
+    <h1 id=" header">nuri</h1>
+    <h2>mnu</h2>
+    <button>click me</button>
+
+    <!-- appendChild -->
+    <div id="country">
+        <p>bangladesh</p>
+    </div>
+    <!-- node.insertbefore -->
+    <ul id="list">
+        <li id="theam">bangladesh</li>
+        <li>india</li>
+        <li>uk</li>
+    </ul>
     <script>
         document.getElementById("text").innerHTML =
             "<section><p> Dom <a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction' target='_blank'>Manipulating documents</a></p></section>"; //ekhane div id te nuri  set kore dom die new value assign korsi
 
-        document.getElementById("text").style.color = "red"; //css style add 
+        document.getElementById("text").style.color = "red"; //css style add
 
         console.log("innerWidth: " + window.innerWidth);
         console.log("innerHeight: " + window.innerHeight);
@@ -39,42 +78,87 @@
         console.log("documentElement: " + document.documentElement); // documentElement
 
         //Select Attribute ( ID, CLASS )
-        const x = document.querySelector('.aa')
-        console.log(x)
+        const x = document.querySelector(".aa");
+        console.log(x);
 
         // querySelector()
-        document.querySelector('.main').style.color = 'green';
-        document.querySelector('.main').style.backgroundColor = 'blue';
-        document.querySelector('.main').style.cssText = 'color: white; background-color: red;';
+        document.querySelector(".main").style.color = "green";
+        document.querySelector(".main").style.backgroundColor = "blue";
+        document.querySelector(".main").style.cssText =
+            "color: white; background-color: red;";
 
         // getAttribute()
-        console.log('getAttribute(): ' + document.getElementById('text').getAttribute('class'));
+        console.log(
+            "getAttribute(): " +
+            document.getElementById("text").getAttribute("class")
+        );
 
         // setAttribute()
-        document.querySelector('.main').setAttribute('style', 'background-color: red;');
+        document
+            .querySelector(".main")
+            .setAttribute("style", "background-color: red;");
 
         // addEventListener()
-        document.addEventListener('click', function () {
-            document.getElementById('text').innerHTML = 'Dom click sucessfully!';
+        document.addEventListener("click", function () {
+            document.getElementById("text").innerHTML = "Dom click sucessfully!";
         });
     </script>
 
-    <!-- 2nd day -->
     <script>
         // document.getElementById("myId")//selecting with Id
         // document.getElementsByClassName("myClass")//selecting with class
         // document.getElementsByTagName("p")//selecting with tag
-
-        let heading = document.getElementById("header")
+        let heading = document.getElementById("header");
         console.log(heading);
-        let normal= document.getElementById("xyz")
+        let normal = document.getElementById("xyz");
         console.log(normal);
 
-        let h2= document.querySelector("h2");
+        let h2 = document.querySelector("h2");
         console.log(h2.innerText);
-        h2.innerText = h2.innerText + "pagol"
+        h2.innerText = h2.innerText + "add"
 
 
+        //new kono line ke top e add korer joonno window.top usee korte pari andrekta process e   jekono elemente
+        // ke top e  print kora jae seta holo prepend die prepend use kore top e ekdom element addd kora jae .
+        let newHeading = document.createElement("h1");
+        newHeading.innerHTML = "hi i am nuri";
+        document.querySelector("body").prepend(newHeading);
+
+        //suppose  ai newHeading eta delete korte chai se jonno remove element use korbo
+        let y = document.querySelector("h2");
+        y.remove();
+        newHeading.remove();//remove hading title
+
+
+
+// -----------------//
+
+        // - document.createElement() : creates element/node
+        // - document.createTextNode() : fills the element/node
+        // - node.appendChild() : allocate at the end of the element
+        // - node.insertBefore() : allocate before the destination element.
+        // - parentNode.removeChild() : removes node
+        // - parentNode.replaceChild(New Element, Element you want to replace): replaces the node
+
+
+        // Create appendChild element
+        const country = document.getElementById("country");
+        let countryList = document.createElement("p");
+        countryList.textContent = "India";
+        country.appendChild(countryList);
+
+        <!-- difference beteween append and apppendchild and append chaildand inseertbefore ---->
+
+        //Element.append() just string object add kore but Element.appendChild()  node object err jonno kaj kore
+        //Element.appendChild() eta die ekta fixed parent er child node add remove replace koraa jabe and insertBefore die just jekono child er age kono element add kora jabe.
+
+        //insertBefore element
+        const list = document.getElementById("list");
+        const list1 = document.getElementById("theam");
+        console.log("list");
+        const item = document.createElement("li");
+        item.textContent = "Us";
+        list.insertBefore(item, list1);
     </script>
 </body>
 
