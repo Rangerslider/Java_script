@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dom</title>
+    <style>
+        * {
+            /* border: 2px solid #dedede; */
+            padding: 15px;
+            margin: 15px;
+        }
+
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: #d5a4a4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="test">Hello World</h1>
+    <div id="container">
+        <section id="a">
+            <p class="p1">ishmoth</p>
+            <p class="p2">ura</p>
+            <p class="p3"> nuri</p>
+            <p class="p4"> nuri1</p>
+        </section>
+        <section id="b">
+            <p>joy</p>
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </section>
+    </div>
+
+    <script>
+        // onclick then change color/style
+        const p3 = document.querySelector('.p3')
+        // p3.style.backgroundColor    = 'lightblue' //default active
+        const p2 = document.querySelector('.p2')
+
+        function case1() {
+            p2.style.backgroundColor = 'lightblue'
+        }
+        p2.onclick = case1
+
+        function case2() {
+            p3.style.backgroundColor = 'lightblue'
+        }
+        p3.onclick = case2
+
+
+
+        // onclick then creates a new alert and element
+        const p4 = document.querySelector(' section#b p')
+        p4.addEventListener('click', function () {
+            alert(('ok'))
+        })
+
+
+        p4.addEventListener('click', function () {
+            const ul = document.querySelector(' section#b ul')
+            const li = document.createElement('li')
+            const item = document.createTextNode('item')
+            li.appendChild(item)
+            ul.appendChild(li)
+        })
+
+
+        p3.onclick = function case2() {
+            p3.style.backgroundColor = 'lightblue'
+        }
+
+        p3.onclick = function () {
+            p3.style.color = 'red'
+        }
+
+
+
+        p3.addEventListener('click', function () {
+            p3.style.backgroundColor = 'lightblue'
+        })
+
+        p3.addEventListener('click', function () {
+            p3.style.color = 'red'
+        })
+
+
+
+
+
+        p2.onclick = function case2() {
+            p2.style.backgroundColor = 'lightblue'
+        }
+
+        p2.onclick = function () {
+            p2.style.color = 'red'
+        }
+
+
+
+        p2.addEventListener('click', function () {
+            p2.style.backgroundColor = 'lightblue'
+        })
+
+        p2.addEventListener('click', function () {
+            p2.style.color = 'red'
+        })
+
+
+
+        p3.addEventListener('mouseenter', function () {
+            p3.style.backgroundColor = 'lightblue'
+        })
+
+        p3.addEventListener('mouseleave', function () {
+            p3.style.color = 'black';
+            p3.style.backgroundColor = 'white'
+        })  
+
+    </script>
+</body>
+
+</html>
