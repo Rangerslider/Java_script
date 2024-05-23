@@ -55,12 +55,27 @@ Mouse Event :
     <div id="country">
         <p>bangladesh</p>
     </div>
+
     <!-- node.insertbefore -->
     <ul id="list">
         <li id="theam">bangladesh</li>
         <li>india</li>
         <li>uk</li>
     </ul>
+
+    <!-- Traverse Element -->
+    <!-- parent element div -->
+    <div class="title">
+        <p class="text">bike</p>
+    </div>
+    <!-- child element div -->
+    <div class="child">
+        <p>bike</p>
+        <p class="second">car</p>
+        <p>bus</p>
+        <p>plane</p>
+    </div>
+
     <script>
         document.getElementById("text").innerHTML =
             "<section><p> Dom <a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction' target='_blank'>Manipulating documents</a></p></section>"; //ekhane div id te nuri  set kore dom die new value assign korsi
@@ -115,8 +130,7 @@ Mouse Event :
 
         let h2 = document.querySelector("h2");
         console.log(h2.innerText);
-        h2.innerText = h2.innerText + "add"
-
+        h2.innerText = h2.innerText + "add";
 
         //new kono line ke top e add korer joonno window.top usee korte pari andrekta process e   jekono elemente
         // ke top e  print kora jae seta holo prepend die prepend use kore top e ekdom element addd kora jae .
@@ -127,11 +141,9 @@ Mouse Event :
         //suppose  ai newHeading eta delete korte chai se jonno remove element use korbo
         let y = document.querySelector("h2");
         y.remove();
-        newHeading.remove();//remove hading title
+        newHeading.remove(); //remove hading title
 
-
-
-// -----------------//
+        // -----------------//
 
         // - document.createElement() : creates element/node
         // - document.createTextNode() : fills the element/node
@@ -139,7 +151,6 @@ Mouse Event :
         // - node.insertBefore() : allocate before the destination element.
         // - parentNode.removeChild() : removes node
         // - parentNode.replaceChild(New Element, Element you want to replace): replaces the node
-
 
         // Create appendChild element
         const country = document.getElementById("country");
@@ -159,6 +170,41 @@ Mouse Event :
         const item = document.createElement("li");
         item.textContent = "Us";
         list.insertBefore(item, list1);
+    </script>
+
+    <script>
+        <!-- Traverse Element -->
+        //DOM Traversal Method
+        /*
+        - parentNode : node(output)
+        - parentElement : element
+        - nextSibling : node
+        - nextElementSibling : element
+        - previousSibling : node
+        - previousElementSibling : element */
+
+        
+        /*ekhane elementuse korbo tokon sei node er moddhe jei element thakbe  seta show korbe otherwise 
+        element na  likhle just node ta show  korbe and space count kore browser console e  jokon amra element use na  kori
+        and eta node e count kore eleement show kore na.*/
+
+
+
+        //get parent element in  node
+        let a = document.querySelector(".text");
+        console.log(a.parentNode);
+        console.log(a.parentElement);
+
+        //get child element in  node
+        let b = document.querySelector(".child");
+        console.log(b.firstElementChild);
+        console.log(b.lastElementChild);
+        console.log(b.childNodes);
+
+        //select the  next and previous Sibling elements in node
+        let second = document.querySelector(".second");
+        console.log(second.previousElementSibling);
+        console.log(second.nextElementSibling);
     </script>
 </body>
 
