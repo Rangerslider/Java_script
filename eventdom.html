@@ -125,7 +125,27 @@
         p3.addEventListener('mouseleave', function () {
             p3.style.color = 'black';
             p3.style.backgroundColor = 'white'
-        })  
+        })
+
+        </script>
+
+    <script>
+        const h1 = document.querySelector("h1");
+
+        function func() {
+            alert("Event triggered!");
+
+            // Remove event listener
+            h1.removeEventListener("mouseenter", func);
+        }
+
+        // New style e events add  kora
+        h1.addEventListener("mouseenter", func);
+        h1.addEventListener("click", func);
+
+        //purano style e events add  kora
+        h1.onmouseenter = func;
+        h1.onclick = func;
 
     </script>
 </body>
