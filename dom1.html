@@ -51,19 +51,19 @@ Mouse Event :
     <h2>mnu</h2>
     <button>click me</button>
 
-    <!-- appendChild -->
+    <!-- -----appendChild------ -->
     <div id="country">
         <p>bangladesh</p>
     </div>
 
-    <!-- node.insertbefore -->
+    <!-- ------node.insertbefore------ -->
     <ul id="list">
         <li id="theam">bangladesh</li>
         <li>india</li>
         <li>uk</li>
     </ul>
 
-    <!-- Traverse Element -->
+    <!-- ------Traverse Element------ -->
     <!-- parent element div -->
     <div class="title">
         <p class="text">bike</p>
@@ -75,6 +75,12 @@ Mouse Event :
         <p>bus</p>
         <p>plane</p>
     </div>
+    <ul class="child1">
+        <li>bike</li>
+        <li>car</li>
+        <li>bus</li>
+        <li>plane</li>
+    </ul>
 
     <script>
         document.getElementById("text").innerHTML =
@@ -123,6 +129,9 @@ Mouse Event :
         // document.getElementById("myId")//selecting with Id
         // document.getElementsByClassName("myClass")//selecting with class
         // document.getElementsByTagName("p")//selecting with tag
+
+
+
         let heading = document.getElementById("header");
         console.log(heading);
         let normal = document.getElementById("xyz");
@@ -132,11 +141,15 @@ Mouse Event :
         console.log(h2.innerText);
         h2.innerText = h2.innerText + "add";
 
+
+
         //new kono line ke top e add korer joonno window.top usee korte pari andrekta process e   jekono elemente
         // ke top e  print kora jae seta holo prepend die prepend use kore top e ekdom element addd kora jae .
         let newHeading = document.createElement("h1");
         newHeading.innerHTML = "hi i am nuri";
         document.querySelector("body").prepend(newHeading);
+
+
 
         //suppose  ai newHeading eta delete korte chai se jonno remove element use korbo
         let y = document.querySelector("h2");
@@ -183,8 +196,8 @@ Mouse Event :
         - previousSibling : node
         - previousElementSibling : element */
 
-        
-        /*ekhane elementuse korbo tokon sei node er moddhe jei element thakbe  seta show korbe otherwise 
+
+        /*ekhane elementuse korbo tokon sei node er moddhe jei element thakbe  seta show korbe otherwise
         element na  likhle just node ta show  korbe and space count kore browser console e  jokon amra element use na  kori
         and eta node e count kore eleement show kore na.*/
 
@@ -205,7 +218,24 @@ Mouse Event :
         let second = document.querySelector(".second");
         console.log(second.previousElementSibling);
         console.log(second.nextElementSibling);
+
+
+        //innerhtml, innerText,textContent
+        
+        let child = document.getElementById("child1");
+        let iteam = document.createElement("li");
+        iteam.innerHTML = "phone";
+
+        child.appendChild(iteam);
+        console.log(child.textContent);
+        console.log(child.innerText);
+
+        /*innertext style follow kore visiable text show  kore suppose amra car ke display  none kore dilam 
+        tokon innertext car ke console  e  show korbe na but text content  console e show korbee all text and 
+        browser e just show korbe na eta inner text er opposite*/
     </script>
+
+
 </body>
 
 </html>
