@@ -127,7 +127,7 @@
             p3.style.backgroundColor = 'white'
         })
 
-        </script>
+    </script>
 
     <script>
         const h1 = document.querySelector("h1");
@@ -147,6 +147,13 @@
         h1.onmouseenter = func;
         h1.onclick = func;
 
+        window.addEventListener("beforeunload", function (container) {
+            // Some browsers require us to call preventDefault() in order to use this
+            container.preventDefault();
+            console.log(container);
+            // returnValue displays warning popup before leaving the page 
+            container.returnValue = "";
+        });
     </script>
 </body>
 
