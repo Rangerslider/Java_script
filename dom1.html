@@ -82,6 +82,12 @@ Mouse Event :
         <li>plane</li>
     </ul>
 
+
+    <!-- class Property-->
+    <p class="food">biriany</p>
+
+
+
     <script>
         document.getElementById("text").innerHTML =
             "<section><p> Dom <a href='https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction' target='_blank'>Manipulating documents</a></p></section>"; //ekhane div id te nuri  set kore dom die new value assign korsi
@@ -123,6 +129,7 @@ Mouse Event :
         document.addEventListener("click", function () {
             document.getElementById("text").innerHTML = "Dom click sucessfully!";
         });
+
     </script>
 
     <script>
@@ -221,7 +228,7 @@ Mouse Event :
 
 
         //innerhtml, innerText,textContent
-        
+
         let child = document.getElementById("child1");
         let iteam = document.createElement("li");
         iteam.innerHTML = "phone";
@@ -230,9 +237,52 @@ Mouse Event :
         console.log(child.textContent);
         console.log(child.innerText);
 
-        /*innertext style follow kore visiable text show  kore suppose amra car ke display  none kore dilam 
-        tokon innertext car ke console  e  show korbe na but text content  console e show korbee all text and 
+        /*innertext style follow kore visiable text show  kore suppose amra car ke display  none kore dilam
+        tokon innertext car ke console  e  show korbe na but text content  console e show korbee all text and
         browser e just show korbe na eta inner text er opposite*/
+    </script>
+
+    <script>
+        /* className, classList,classList.add(),classList.remove(),
+    classList.toggle(),classList.item(),classList.contains(),
+    classList.replace() Property*/
+
+        //className
+        const food1 = document.querySelector('p');
+        console.log(food1.className);
+        food1.className = 'favorite';
+        console.log(food1.className);
+
+        //classList
+        console.log(food1.classList);
+
+        //classList.add()
+        food1.classList.add('fav', 'tasty');
+        console.log(food1.classList);
+
+        //classList.remove()
+        food1.classList.remove('tasty');
+        console.log(food1.classList);
+
+        //classList.replace()
+        food1.classList.replace('fav', 'favorite');
+        console.log(food1.classList);
+
+        //classList.toggle()
+        food1.classList.toggle('kacchi');
+        console.log(food1.classList);
+
+        food1.classList.toggle('murgi');
+        console.log(food1.classList);
+
+        food1.classList.toggle('chagol');
+        console.log(food1.classList);
+
+        //classList.contains()
+        const isFavorite = food1.classList.contains('favorite');
+        const isSoup = food1.classList.contains('soup');
+        console.log("Contains favorite: ", isFavorite);
+        console.log("Contains soup: ", isSoup);
     </script>
 
 
