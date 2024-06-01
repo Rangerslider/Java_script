@@ -72,3 +72,58 @@ console.log(true || false); // true
 
 // logical NOT
 console.log(!true); // false
+
+
+
+// Boolean 
+const age = 16;
+const c = age >= 20; //false
+const d = age < 30; //true
+
+// NOT operator
+console.log(!a); //true
+
+// AND operator
+console.log(a && b); //false
+console.log(!a && b); //true
+
+// OR operator
+console.log(a || b); //true
+console.log(a || !b); //false
+
+
+// ---------logical-operators
+const code1 = true;
+const code2 = false;
+
+console.log(code1 && code2); // -- false
+console.log(code1 || code2); // -- true
+console.log(!code1); // -- false
+
+const isTired = false;
+
+if (code1 && code2 && !isTired) {
+  console.log("code run in dev!");
+} else {
+  console.log("code is wrong");// eta print hobe
+}
+
+
+///-------conditional-ternary-operator--------
+const age2 = 23;
+age2 >= 18
+  ? console.log("Biker") 
+  : console.log("Driver");
+
+// Operators always produce a value
+const challange = age >= 18 ? "Biker" : "Driver";
+console.log(challange); // → Biker
+
+let challange2;
+if (age2 >= 18) {
+  challange2 = "Biker";
+} else {
+  challange2 = "Driver";
+}
+console.log(challange2); // → Biker
+
