@@ -47,20 +47,6 @@ function a() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                        /* ---------------------------Arrow function: --------------------------- */
 //nomally function creat 
   function countVowels (str){
@@ -102,4 +88,30 @@ let nums =[7, 10, 39];
 let square = (num) => {
     console.log( num * num);
 };
-nums.forEach(square); 
+nums.forEach(square);
+
+/*-------------------------------hoisting function-------------------------*/
+/*normally amra ranna kori then amra khai but hoisting jinishta holo amra  age khaite parbo without ranna na kore.
+suppose amra function create kore then function ke call kori and print kori but hoisting e 
+function create korer agei amra function call korte parbo.*/ 
+
+getName(); 
+console.log(getName); 
+function getName() {
+  console.log("Ishmoth ura nuri");
+}
+
+/*--------------------------------pasing a function to anothor function-------------------------*/ 
+
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add;
+
+function average(a, b, fn) {
+  return fn(a, b) / 2;
+}
+
+let result = average(30, 20, sum);
+console.log(result);
