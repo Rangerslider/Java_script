@@ -1,4 +1,8 @@
 //JavaScript pass-by-value or pass-by-reference
+/*js e primituve values holo 5types jegulo ke passed type value bole (boolean, number, string, null, 
+undefined). ar baki type holo object efer ke non primitve value bole (array, function, object)  -->
+primitive values er 5ta type er kono value kono memory e allocate kora jae na je comman dea hoi setai fixed hisabe chole. */
+
 
 //pass by value primitive data(string, booleans ,numbers, null,undefiend) type use kore ar pass by reference non-primitive(array & objects) 
 // data type use kore .Pass by value independeted thake.
