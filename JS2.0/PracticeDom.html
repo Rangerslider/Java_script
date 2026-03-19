@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title">Ishmoth Ura Nuri</h1>
+
+    <ul class="list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Mango</li>
+    </ul>
+
+    <p id="msg">motu</p>
+    <p id="text3">Joy</p>
+    <button onclick="changeText()">send</button>
+    <div id="box">Nuri</div>
+    <button onclick="removeBox()">Remove</button>
+
+    <script>
+        const heading = document.querySelector('#title');
+        heading.style.color = "red";
+
+        // child elements ecess:
+        const list = document.querySelector('.list');
+        console.log(list.children[0].innerText); // Apple
+        console.log(list.children[1].innerText); // Banana
+
+        // createElement:
+        const new1 = document.createElement('div');
+        new1.textContent = "Joy Adhikary";
+        console.log(new1);//console e print kore dekha jabe new div create hoise 
+
+        //appendChild:
+        document.body.appendChild(new1);//page er new div print hoise
+
+        //replaceWith:
+        function changeText() {
+            const text1 = document.querySelector('#msg');
+            const text2 = document.createElement('p');
+            text2.textContent = "Bhaia";
+            text1.replaceWith(text2);
+        }
+
+        //outerHTML:
+        const text3 = document.querySelector('#text3');
+        text3.outerHTML = "<h1>Bhaia</h1>";
+
+        // remove():
+        function removeBox() {
+            const box = document.querySelector('#box');
+            box.remove();
+        }
+        //multiple deleting:
+        // const items = document.querySelectorAll('li');
+        // items.forEach(item => {
+        //     item.remove();
+        // });
+    </script>
+</body>
+
+</html>
