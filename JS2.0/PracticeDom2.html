@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 300px;
+            height: 250px;
+            background: lightblue;
+            margin: 0;
+            position: relative;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 250px;
+            background: rgb(173, 230, 227);
+            margin: auto;
+            top: 0;
+            right: 0;
+            left: 0;
+            position: absolute;
+        }
+
+        .box3 {
+            width: 200px;
+            height: 100px;
+            background: rgb(6, 175, 173);
+            margin: auto;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+        }
+
+
+        .new-box {
+            width: 300px;
+            height: 250px;
+            background: orange;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box1 ">Nuri</div>
+        <div class="box2 ">Joy</div>
+        <!-- <div class="box3 "></div> -->
+    </div>
+
+    <div id="wrapper">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+    </div>
+
+
+    <!-- 1st Ex: 2box 300x250 er moddhe insert 1 box using js dom z-index die.-->
+    <script>
+        const newBox = document.createElement("div");
+        newBox.className = "box3";
+        newBox.innerText = "Adhikary";
+        document.querySelector("#container").appendChild(newBox);
+
+        const box3 = document.querySelector(".box3");
+        box3.innerText = "Adhikary"
+        box3.style.zIndex = "99999999";
+        box3.style.position = "absolute";
+    </script>
+
+    <!-- 2nd Ex: 4 box er maje 3rd e 1ta box dukabo using dom -->
+
+    <!-- "beforebegin"  element এর আগে
+    "afterbegin"   element এর ভিতরে শুরুতে
+    "beforeend"    element এর ভিতরে শেষে
+    "afterend"     element এর পরে -->
+    <script>
+        const wrapper = document.getElementById("wrapper");
+        const item1 = document.querySelector(".item1");
+        const pack = document.createElement("div");
+        pack.innerText = "pack added";
+        wrapper.appendChild(pack);//eta last e add kortese 
+        wrapper.insertBefore(pack, wrapper.children[2]);// eta majhe insert kortese 3no e index hisebe
+
+
+        // syntex:element.insertAdjacentElement(position, newElement);
+        item1.insertAdjacentElement("afterend", pack);
+
+        // wrapper.children[3].before(pack);
+    </script>
+
+
+
+    <!-- 3rd Ex:300 2ta box er moddhe 1ta 300x600 iframe load korbo -->
+
+</body>
+
+</html>
