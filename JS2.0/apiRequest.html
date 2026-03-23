@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>API Js:<br>
+        readyState:<br>
+        0 → request not start : open()not called yet. <br>
+        1 → open now : open() has been called <br>
+        2 → request sending :send() <br>
+        3 → response coming<br>
+        4 → response full & final coming<br>
+    </h1>
+    <!-- <script>
+        //raw response (string) ber kora:
+        const requestUrl = 'https://api.github.com/users/rangerSlider'
+        const xhr = new XMLHttpRequest();// eta die browser e req pathano hoi
+        xhr.open('GET', requestUrl);// get die req er data ana/paoa hoi
+        xhr.onreadystatechange = function () { //jokhon request cholte thakbe ter state berber change hobe and ai function protekber run hobe.
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                console.log(this.responseText);// this dear karone server theke je data asce seta string akare dekhabe
+            }
+        };
+        xhr.send();//eta die request send kora hoi na hole req jae na.
+    </script> -->
+
+
+    <script>
+        //response ke object banie (JSON.parse) specific data ber kora:
+        const requestUrl1 = 'https://api.github.com/users/rangerSlider';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl1);
+        xhr.onreadystatechange = function () {
+            console.log(xhr.readyState);
+            if (xhr.readyState === 4) {
+                // console.log(this.responseText);
+                const data = JSON.parse(this.responseText);//json.parse die string value ke object banaie json formate e ane
+                console.log(typeof data);
+                console.log(data.bio);
+                console.log(data.public_repos);
+
+            }
+        };
+        xhr.send();
+    </script>
+
+    <!-- 1st one : 
+    open() → order দিছো
+    send() → waiter-কে বলছো "order পাঠাও"
+    readyState → খাবার রান্না হচ্ছে, আসছে, শেষ হলো
+    responseText → খাবার হাতে পাওয়া. -->
+
+    <!-- 2nd one: 
+    open()	order লিখলে
+    send()	waiter কে দিলে
+    readyState	রান্না status
+    responseText	খাবার হাতে পাওয়া
+    JSON.parse	খাবার খুলে খাওয়া -->
+</body>
+
+</html>
