@@ -1,0 +1,53 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="aqi"></div>
+    <div class="weather"></div>
+    <div class="location"></div>
+
+
+    <script>
+        const aqi = document.querySelector(".aqi");
+        const weather = document.querySelector(".weather");
+
+        const aqiUrl = "https://content-adfinix.sgp1.cdn.digitaloceanspaces.com/apiFileDha.json";
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", aqiUrl);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                const data = JSON.parse(xhr.responseText);
+                console.log(data);
+                const aqiValue = data.data.current.pollution.aqius;
+                const weatherValue = data.data.current.weather.heatIndex;
+                aqi.innerHTML = "Dhaka AQI: " + aqiValue;
+                weather.innerHTML = "Dhaka Weather: " + weatherValue;
+            }
+        };
+        xhr.send();
+    </script>
+
+    <script>
+        const find = document.querySelector(".location");
+        async function loadData() {
+            try {
+                let response = await fetch(aqiUrl);
+                let data = await response.json();
+                console.log(data);
+                const serch = data.data.location.coordinates[1];
+                find.innerHTML = "location: " + serch;
+            } catch (error) {
+                console.log("Error:", error);
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+
+</html>
